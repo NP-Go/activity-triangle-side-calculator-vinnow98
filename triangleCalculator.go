@@ -1,4 +1,4 @@
-package main
+/*package main
 
 import (
 	"fmt"
@@ -26,4 +26,31 @@ func main() {
 	fmt.Scanln(&angle)
 
 	calculateSide(length1, length2, angle)
+}
+*/
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func calculateSideC(sideA, sideB, angle float64) float64 {
+	sideC := math.Sqrt(math.Pow(sideA, 2) + math.Pow(sideB, 2) - (2 * sideA * sideB * math.Cos(angle*math.Pi/180)))
+	fmt.Println("The length of side C is", sideC)
+	return sideC
+}
+
+func main() {
+	var sideA float64
+	var sideB float64
+	var angle float64
+	fmt.Println("Input side a")
+	fmt.Scanln(&sideA)
+	fmt.Println("Input side b")
+	fmt.Scanln(&sideB)
+	fmt.Println("Input an angle")
+	fmt.Scan(&angle)
+	calculateSideC(sideA, sideB, angle)
+
 }
